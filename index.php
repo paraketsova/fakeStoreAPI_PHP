@@ -13,9 +13,8 @@
 <body class="container">
   <div class="header shadow-sm p-3 mt-3 mb-3 rownded"><h2>FAKESTORE</h2></div>
   <div class="row">
-      <?php App::main(); ?>
+    <?php App::main(); ?>
   </div>
-
 </body>
 ​
 </html>
