@@ -53,22 +53,22 @@ class App {
         $altText = "img of $product[title]";
         $img = "<img src='$url' alt='$altText' class='img-fluid m-2' style='width: 100%;'>";
         $table .= "<tr>
-          <td> $product[title] </td>
+          <td class='fw-bold'> $product[title] </td>
           <td> $img </td>
           <td> $product[description] </td>
-          <td> $product[price] SEK</td>
+          <td> <span class='fw-bold'>$product[price]</span> SEK</td>
         </tr>";
         }
       }
       $table .= "</table>";
-      echo "<div class='col-4'>
+      echo "<div class='col-6'>
             <h4>Products list:</h4>
             $table
           </div>";
     } else {
       echo "<div class='col-4'>
               <h4>Welcome to our store!</h4>
-              <h4>Choose a category from the list</h4>
+              <h6> ← Choose a category from the list</h6>
           </div>";
     }
   }
