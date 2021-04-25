@@ -1,8 +1,9 @@
 <?php
 class App {
   public static $endpoint = "https://webacademy.se/fakestore/";
-
-  /*** The Main method ***/
+  /**
+   * The Main method
+   */
   public static function main(){
     try {
       $array =  self::getData();
@@ -12,8 +13,9 @@ class App {
       echo $error->getMessage();
     }
   }
-
-  /*** Gets data from endpoint ***/
+  /**
+   * Gets data from endpoint
+   */
   public static function getData(){
     $json = @file_get_contents(self::$endpoint);
     if(!$json) {
@@ -21,7 +23,9 @@ class App {
     }
     return json_decode($json, true);
   }
-  /*** List the categories ***/
+  /**
+   * List the categories
+   */
   public static function viewCategory(){
     $categories = array('women clothing', 'men clothing', 'jewelery');
 
@@ -33,8 +37,9 @@ class App {
     echo "</ul>";
     echo "</div>";
   }
-
-  /*** List all products from category ***/
+  /**
+   * List all products from category
+   */
   public static function viewData($array){
     $categoryDone = $_GET['category'] ?? null;
 
