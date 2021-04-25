@@ -36,16 +36,17 @@ class App {
 
   /*** List all products from category ***/
   public static function viewData($array){
-    $table = "<table class='table'>
-    <tr>
-      <th>Title</th>
-      <th>Picture</th>
-      <th>Description</th>
-      <th>Price</th>
-    </tr>";
-    $categoryDone = $_GET['category'] ?? "Choose a category";
+
+    $categoryDone = $_GET['category'] ?? null;
 
     if(isset($categoryDone)) {
+      $table = "<table class='table'>
+      <tr>
+        <th>Title</th>
+        <th>Picture</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>";
       foreach ($array as $product) {
         if ($product['category'] === $categoryDone) {
           $url = $product['image'];
@@ -56,16 +57,19 @@ class App {
           <td> $img </td>
           <td> $product[description] </td>
           <td> $product[price] SEK</td>
-          <td> $product[category]</td>
         </tr>";
         }
       }
-    }
-    $table .= "</table>";
-    echo "<div class='col-4'>
+      $table .= "</table>";
+      echo "<div class='col-4'>
             <h4>Products list:</h4>
             $table
           </div>";
-
+    } else {
+      echo "<div class='col-4'>
+              <h4>Welcome to our store!</h4>
+              <h4>Choose a category from the list</h4>
+          </div>";
+    }
   }
 }
