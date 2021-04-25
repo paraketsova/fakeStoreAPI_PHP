@@ -23,15 +23,14 @@ class App {
   }
   /*** List categories ***/
   public static function viewCategory(){
-    $categories = array("women clothing", "men clothing", "jewelery");
+    $categories = array('women clothing', 'men clothing', 'jewelery');
 
     echo "<div class='col-3'>
-    <h4>Products categories:</h4><ol>";
-
+    <h4>Products categories:</h4><ul>";
     foreach ($categories as $category) {
-      echo "<p><a href=`?category='$category'`>$category</a></p>";
+      echo "<li><a href='?category=$category' class='nounderline'>" . ucfirst($category) . "</a></li>";
     }
-    echo "</ol>";
+    echo "</ul>";
     echo "</div>";
   }
 
@@ -44,18 +43,22 @@ class App {
       <th>Description</th>
       <th>Price</th>
     </tr>";
-    //$categoryDone = $_GET['category'] ?? "Choose a category";
-    $categoryDone = "women clothing";
-    foreach ($array as $product) {
-      if ($product['category'] === $categoryDone) {
-        $url = $product['image'];
-        $img = "<img src='$url' class='img-fluid m-2' style='width: 100%;'>";
+    $categoryDone = $_GET['category'] ?? "Choose a category";
+
+    if(isset($categoryDone)) {
+      foreach ($array as $product) {
+        if ($product['category'] === $categoryDone) {
+          $url = $product['image'];
+        $altText = "img of $product[title]";
+        $img = "<img src='$url' alt='$altText' class='img-fluid m-2' style='width: 100%;'>";
         $table .= "<tr>
           <td> $product[title] </td>
           <td> $img </td>
           <td> $product[description] </td>
           <td> $product[price] SEK</td>
+          <td> $product[category]</td>
         </tr>";
+        }
       }
     }
     $table .= "</table>";

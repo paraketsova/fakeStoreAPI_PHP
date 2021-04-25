@@ -11,7 +11,7 @@
 </head>
 ​
 <body class="container">
-  <div class="header p-3 mt-3 mb-3"><h2>Welcome to our store!</h2></div>
+  <div class="header shadow-sm p-3 mt-3 mb-3 rownded"><h2>Welcome to our store!</h2></div>
   <div class="row">
       <?php App::main(); ?>
   </div>
