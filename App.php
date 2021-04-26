@@ -29,12 +29,11 @@ class App {
   public static function viewCategory(){
     $categories = array('women clothing', 'men clothing', 'jewelery');
 
-    echo "<div class='col-3'>
-    <h4>Products categories:</h4><ul>";
+    echo "<div class='col-2'>
+    <h4>Products categories:</h4>";
     foreach ($categories as $category) {
-      echo "<li><a href='?category=$category' class='nounderline'>" . ucfirst($category) . "</a></li>";
+      echo "<a class='list-group-item list-group-item-action' href='?category=$category' class='link'>" . ucfirst($category) . "</a>";
     }
-    echo "</ul>";
     echo "</div>";
   }
   /**
@@ -44,30 +43,28 @@ class App {
     $categoryDone = $_GET['category'] ?? null;
 
     if(isset($categoryDone)) {
-      $table = "<table class='table'>
-        <tr>
-          <th>Title</th>
-          <th>Picture</th>
-          <th>Description</th>
-          <th>Price</th>
-        </tr>";
+      $div = "<div class='row'>";
         foreach ($array as $product) {
           if ($product['category'] === $categoryDone) {
             $url = $product['image'];
             $altText = "img of $product[title]";
-            $img = "<img src='$url' alt='$altText' class='img-fluid m-2' style='width: 100%;'>";
-            $table .= "<tr>
-              <td class='fw-bold'> $product[title] </td>
-              <td> $img </td>
-              <td> $product[description] </td>
-              <td> <span class='fw-bold'>$product[price]</span> SEK</td>
-            </tr>";
+            $div .="
+              <div class='col-sm-3'>
+                <div class='card' >
+                  <img src='$url' class='card-img-top' alt='$altText'>
+                  <div class='card-body'>
+                    <h5 class='card-title' class='fw-bold'> $product[title] </h5>
+                    <p class='card-text' id='descript'> $product[description] </p>
+                  </div>
+                  <div class='card-footer'> <span class='fw-bold'>$product[price]</span> SEK</div>
+                </div>
+              </div>";
           }
         }
-      $table .= "</table>";
-      echo "<div class='col-6'>
-              <h4>Products list:</h4>
-              $table
+      echo "<div class='col-9'>
+              <h4>" . strtoupper($categoryDone) . "</h4>
+              <h5>Products list:</h5>
+              $div
             </div>";
     } else {
       echo "<div class='col-4'>
