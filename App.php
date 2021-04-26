@@ -50,7 +50,7 @@ class App {
             $altText = "img of $product[title]";
             $div .="
               <div class='col-sm-3'>
-                <div class='card' >
+                <div class='card' id='cardB'>
                   <img src='$url' class='card-img-top' alt='$altText'>
                   <div class='card-body'>
                     <h5 class='card-title' class='fw-bold'> $product[title] </h5>

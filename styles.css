@@ -1,28 +1,24 @@
-#descript {
+
+/* #descript {
   font-size: 0.7rem;/*
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   line-height: 1.3em;
-  height: 8rem; */
-}
-/* #red {
+  height: 8rem;
+} #red {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   line-height: 1.3em;
   height: 5rem;
-} */
-
+}
+ */
 .card {
   margin-top: 1.5rem;
   cursor: pointer;
-}
-.card:hoover{
-
-
 }
 
 .card-title {
