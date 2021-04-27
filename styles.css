@@ -1,26 +1,76 @@
-
-/* #descript {
-  font-size: 0.7rem;/*
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  line-height: 1.3em;
-  height: 8rem;
-} #red {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  line-height: 1.3em;
-  height: 5rem;
+#title, #titleFooter {
+  background-color: #565656;
+  color: transparent;
+  text-shadow: 0px 2px 3px rgba(255,255,255,0.5);
+  -webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;
 }
- */
+
+.header {
+  background-color: #bdbdbd;
+}
+
 .card {
   margin-top: 1.5rem;
   cursor: pointer;
 }
 
+.card:hover {
+  transform:scale(1.02);
+  background-color: #eeeeee;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .card-title {
+  white-space: nowrap;
+  overflow-x: hidden;
   font-size: 1rem;
+}
+
+.card-text {
+  height: 110px;
+  overflow-y: hidden;
+  font-size: 0.7rem;
+}
+
+#link:hover{
+  color: white;
+}
+
+.footer {
+  background: #bdbdbd;
+  color: #5f5f5f;
+}
+
+.footer.links ul {
+  list-style-type: none;
+}
+.footer.links li a{
+  color: white;
+  transition: color .2s;
+}
+.footer.links li a:hover{
+  text-decoration:none;
+  color: #5f5f5f;
+}
+.footer.about-company i {
+  font-size: 25px;
+
+}
+.footer.about-company p {
+  color: #5f5f5f;
+}
+
+.footer.about-company a:hover {
+  color: #5f5f5f;
+}
+.footer.location i{
+  font-size: 18px;
+  color: #5f5f5f;
+}
+
+#copyright p {
+  border-top:1px solid rgba(255,255,255,.1);
+    color: #5f5f5f;
 }
