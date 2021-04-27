@@ -54,7 +54,7 @@
 
 .footer {
   background: #bdbdbd;
-  color: #3b3b3b;
+  color: #5f5f5f;
 }
 
 .footer a {
@@ -62,9 +62,8 @@
   text-decoration: none;
 }
 
-.footer.location i {
-  font-size: 0.7rem;
-  color: #5f5f5f;
+#footer_location, #footer_links {
+  margin-top: 0rem;
 }
 
 #copyright p {

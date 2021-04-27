@@ -19,19 +19,19 @@
     <?php App::main(); ?>
   </div>
 
-  <div class="mt-5 pt-5 pb-5 footer rounded">
+  <div class="mt-5 pt-5 pb-2 footer rounded">
     <div class="container">
       <div class="row">
         <div class="col-lg-5 col-xs-12 about-company">
           <h2 id="titleFooter">FAKESTORE</h2>
         </div>
-        <div class="col-lg-3 col-xs-12 links">
+        <div id='footer_links' class="col-lg-3 col-xs-12 links">
           <h4 class="mt-lg-0 mt-sm-3">Links</h4>
             <div class="m-0 p-0">
               <a href="#">Etiam vitae.com 🧩</a>
             </div>
         </div>
-        <div class="col-lg-4 col-xs-12 location">
+        <div id='footer_location' class="col-lg-4 col-xs-12 location">
           <h4 class="mt-lg-0 mt-sm-4">Location</h4>
           <p>22, Lorem ipsum dolor, Consectetur 1234</p>
           <p class="mb-0"><i class="fa fa-phone mr-3"></i>✆ (541) 754-3010</p>
