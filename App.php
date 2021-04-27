@@ -33,7 +33,7 @@ class App {
     $categories = array('women clothing', 'men clothing', 'jewelery');
 
     echo "<div class='col-2'>
-      <h4>Products categories:</h4>";
+      <h4 id='title_categories'>Products categories:</h4>";
     foreach ($categories as $category) {
       echo "<a class='list-group-item list-group-item-action list-group-item-dark' href='?category=$category' id='link'>" . ucfirst($category) . "</a>";
     }
@@ -76,8 +76,8 @@ class App {
     } else {
       echo "
         <div class='col-4'>
-          <h4>Welcome to our store!</h4>
-          <h6> ← Choose a category from the list</h6>
+          <h4 id='text_welcome'>Welcome to our store!</h4>
+          <h5 id='text_choosing'> ← Choose a category from the list</h5>
         </div>";
     }
   }

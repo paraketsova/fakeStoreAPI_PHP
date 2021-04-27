@@ -1,7 +1,7 @@
 #title, #titleFooter {
   background-color: #565656;
   color: transparent;
-  text-shadow: 0px 2px 3px rgba(255,255,255,0.5);
+  text-shadow: 0px 2px 3px #ffffff80;
   -webkit-background-clip: text;
      -moz-background-clip: text;
           background-clip: text;
@@ -9,6 +9,20 @@
 
 .header {
   background-color: #bdbdbd;
+}
+
+#title_categories {
+  margin-left: 1.5rem;
+  margin-bottom: 2.4rem;
+}
+
+#text_choosing {
+  margin-top: 7rem;
+}
+
+#text_welcome {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
 }
 
 .card {
@@ -19,7 +33,7 @@
 .card:hover {
   transform:scale(1.02);
   background-color: #eeeeee;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card-title {
@@ -40,37 +54,20 @@
 
 .footer {
   background: #bdbdbd;
-  color: #5f5f5f;
+  color: #3b3b3b;
 }
 
-.footer.links ul {
-  list-style-type: none;
-}
-.footer.links li a{
-  color: white;
-  transition: color .2s;
-}
-.footer.links li a:hover{
-  text-decoration:none;
+.footer a {
   color: #5f5f5f;
-}
-.footer.about-company i {
-  font-size: 25px;
-
-}
-.footer.about-company p {
-  color: #5f5f5f;
+  text-decoration: none;
 }
 
-.footer.about-company a:hover {
-  color: #5f5f5f;
-}
-.footer.location i{
-  font-size: 18px;
+.footer.location i {
+  font-size: 0.7rem;
   color: #5f5f5f;
 }
 
 #copyright p {
-  border-top:1px solid rgba(255,255,255,.1);
-    color: #5f5f5f;
+  border-top:1px solid lightgrey;
+  color: #5f5f5f;
 }
