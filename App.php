@@ -1,6 +1,6 @@
 <?php
 class App {
-  public static $endpoint = "https://webacademy.se/fakestore/";
+  public static $endpoint = "https://webacademy.se/fakestores/";
 
   /**
    * The Main method
@@ -21,7 +21,7 @@ class App {
   public static function getData() {
     $json = @file_get_contents(self::$endpoint);
     if(!$json) {
-      throw new Exception("Could not access " . self::$endpoint);
+      throw new Exception("<p class='alert alert-danger'> Could not access " . self::$endpoint."</p>");
     }
     return json_decode($json, true);
   }

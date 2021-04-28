@@ -19,7 +19,7 @@
     <?php App::main(); ?>
   </div>
 
-  <div class="mt-5 pt-5 pb-2 footer rounded">
+  <div class="mt-5 pt-5 pb-5 footer rounded">
     <div class="container">
       <div class="row">
         <div class="col-lg-5 col-xs-12 about-company">
