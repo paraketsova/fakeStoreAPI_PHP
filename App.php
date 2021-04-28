@@ -1,6 +1,7 @@
 <?php
 class App {
-  public static $endpoint = "https://webacademy.se/fakestores/";
+  static $endpoint = "https://webacademy.se/fakestore/";
+  static $categories = array('women clothing', 'men clothing', 'jewelery');
 
   /**
    * The Main method
@@ -30,11 +31,9 @@ class App {
    * List the categories
    */
   public static function viewCategories() {
-    $categories = array('women clothing', 'men clothing', 'jewelery');
-
     echo "<div class='col-2'>
       <h4 id='title_categories'>Products categories:</h4>";
-    foreach ($categories as $category) {
+    foreach (self::$categories as $category) {
       echo "<a class='list-group-item list-group-item-action list-group-item-dark' href='?category=$category' id='link'>" . ucfirst($category) . "</a>";
     }
     echo "</div>";
@@ -45,40 +44,56 @@ class App {
    */
   public static function viewProducts($array) {
     $categoryDone = $_GET['category'] ?? null;
-
-    if (isset($categoryDone)) {
-      $div = "<div class='row'>";
-        foreach ($array as $product) {
-          if ($product['category'] === $categoryDone) {
-            $url = $product['image'];
-            $altText = "Image for {$product['title']}";
-            $div .= "
-              <div class='col-sm-3'>
-                <div class='card' id='cardB'>
-                  <img src='{$url}' class='card-img-top' alt='{$altText}'>
-                  <div class='card-body'>
-                    <h5 class='card-title' class='fw-bold'> {$product['title']} </h5>
-                    <p class='card-text'> {$product['description']} </p>
-                  </div>
-                  <div class='card-footer'>
-                    <span class='fw-bold'> {$product['price']} </span> SEK
-                  </div>
-                </div>
-              </div>";
-          }
-        }
-      echo "
-        <div class='col-9'>
-          <h4>" . strtoupper($categoryDone) . "</h4>
-          <h5>Products list:</h5>
-          {$div}
-        </div>";
-    } else {
+    /**
+    * View before choosing category
+    */
+    if ($categoryDone === null) {
       echo "
         <div class='col-4'>
           <h4 id='text_welcome'>Welcome to our store!</h4>
           <h5 id='text_choosing'> ← Choose a category from the list</h5>
         </div>";
+      return;
     }
+    /**
+    * Check is this category are from list
+    */
+    if (!in_array($categoryDone, self::$categories)) {
+      echo "
+        <div class='col-4'>
+          <h4 class='alert alert-danger' id='text_welcome'>Sorry, we don't have this category!</h4>
+          <h5 id='text_choosing'> ← Choose a category from the list</h5>
+        </div>";
+      return;
+    }
+    /**
+    * Get products for checking category
+    */
+    $div = "<div class='row'>";
+      foreach ($array as $product) {
+        if ($product['category'] === $categoryDone) {
+          $url = $product['image'];
+          $altText = "Image for {$product['title']}";
+          $div .= "
+            <div class='col-sm-3'>
+              <div class='card' id='cardB'>
+                <img src='{$url}' class='card-img-top' alt='{$altText}'>
+                <div class='card-body'>
+                  <h5 class='card-title' class='fw-bold'> {$product['title']} </h5>
+                  <p class='card-text'> {$product['description']} </p>
+                </div>
+                <div class='card-footer'>
+                  <span class='fw-bold'> {$product['price']} </span> SEK
+                </div>
+              </div>
+            </div>";
+        }
+      }
+    echo "
+      <div class='col-9'>
+        <h4>" . strtoupper($categoryDone) . "</h4>
+        <h5>Products list:</h5>
+        {$div}
+      </div>";
   }
 }
